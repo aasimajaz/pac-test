@@ -1,17 +1,17 @@
 terraform {
   required_providers {
     google = {
-      source  = "hashicorp/google"
+      source = "hashicorp/google"
     }
   }
 }
 
 provider "google" {
-  region  = "me-central2"
-  zone    = "me-central2-a"
+  region = "me-central2"
+  zone   = "me-central2-a"
 }
 
-resource "google_compute_network" "example_network"{
+resource "google_compute_network" "example_network" {
   name                            = "example-network-1"
   delete_default_routes_on_create = false
   auto_create_subnetworks         = false
@@ -33,8 +33,12 @@ resource "google_container_node_pool" "example_node_pool" {
 }
 
 resource "google_storage_bucket" "example_bucket" {
-  name          = "cpg-example-bucket-1"
-  location      = "me-central2"
+  name     = "cpg-example-bucket-1"
+  location = "me-central2"
+  labels = {
+    org = "OG_590001"
+    env = "dev"
+  }
   force_destroy = true
 
   project = "ipd-sample-gke-autopilot"
