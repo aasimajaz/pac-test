@@ -26,7 +26,7 @@ resource "google_compute_network" "vpc_network" {
 resource "google_compute_subnetwork" "private-subnet" {
   name          = "app-subnetwork"
   ip_cidr_range = "10.10.100.0/24"
-  region        = "me-central1"
+  region        = "me-central2"
   network       = google_compute_network.vpc_network.name
   private_ip_google_access = "true"
   }
@@ -35,7 +35,7 @@ resource "google_compute_subnetwork" "private-subnet" {
 resource "google_compute_subnetwork" "public-subnet" {
   name          = "web-subnetwork"
   ip_cidr_range = "10.10.150.0/24"
-  region        = "me-central1"
+  region        = "me-central2"
   network       = google_compute_network.vpc_network.name
   private_ip_google_access = "true"
   }
