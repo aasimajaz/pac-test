@@ -45,7 +45,7 @@ resource "google_compute_subnetwork" "public-subnet" {
 resource "google_compute_instance" "app_instance" {
  count = 3
   name         = "app-instance-${count.index}"
-  machine_type = "f1-micro"
+  machine_type = "e2-small"
   zone         = "me-central2-a"
   tags = ["type","app"]
   boot_disk {
