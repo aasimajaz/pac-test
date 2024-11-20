@@ -50,7 +50,7 @@ resource "google_compute_instance" "app_instance" {
   tags = ["type","app"]
   boot_disk {
     initialize_params {
-      image = "centos-cloud/centos-7"
+      image = "ubuntu-2204-lts"
     }
   }
   network_interface {
