@@ -10,9 +10,11 @@ terraform {
 }
 
 provider "google" {
+  project = "project-for-vpc-testing"
   region = "me-central2"
   zone   = "me-central2-a"
 }
+
 #creating a VPC network for testing
 resource "google_compute_network" "vpc_network" {
   name = "cpg-network"
