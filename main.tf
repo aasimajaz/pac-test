@@ -66,7 +66,7 @@ resource "google_storage_bucket" "example_bucket" {
   force_destroy = true
   project = "project-for-vpc-testing"
 
-  #uniform_bucket_level_access = false
+  uniform_bucket_level_access = false
 }
 
 #adding public access to bucket
